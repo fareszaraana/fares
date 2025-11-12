@@ -8,17 +8,7 @@
     scroll-behavior: smooth;
 }
 
-/* تحسينات الأداء */
-html {
-    will-change: scroll-position;
-}
-
-body {
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    perspective: 1000;
-}
-
+/* Header Styles */
 header {
     background-color: #f0f0f0;
     width: 100%;
@@ -27,8 +17,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 5%;
-    will-change: transform;
+    padding: 15px 5%;
 }
 
 .logo {
@@ -44,18 +33,55 @@ header {
     text-decoration: none;
     font-size: 1.1em;
     font-weight: 500;
-    padding-left: 30px;
-    transition: color 0.3s ease;
+    margin-left: 30px;
 }
 
 .navigation a:hover {
     color: #601cfc;
 }
 
+/* Hamburger Menu (Mobile) */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hamburger {
+    display: block;
+    position: relative;
+    width: 24px;
+    height: 2px;
+    background: #3a6cf4;
+    transition: all 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: #3a6cf4;
+    transition: all 0.3s ease;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}
+
+/* Section Padding */
 section {
     padding: 100px 5%;
 }
 
+/* Main Section */
 .main {
     width: 100%;
     min-height: 100vh;
@@ -65,7 +91,10 @@ section {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    transform: translateZ(0);
+}
+
+.main-content {
+    max-width: 800px;
 }
 
 .main h2 {
@@ -102,28 +131,21 @@ section {
     letter-spacing: 1px;
     border-radius: 15px;
     margin-bottom: 40px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    transform: translateZ(0);
+    transition: 0.7s ease;
 }
 
 .main-btn:hover {
     background-color: #123492;
-    transform: scale(1.1) translateZ(0);
+    transform: scale(1.1);
 }
 
 .social-icons a {
     color: #fff;
     font-size: 1.7em;
-    padding-right: 30px;
-    transition: transform 0.3s ease;
-    display: inline-block;
-    transform: translateZ(0);
+    margin-right: 30px;
 }
 
-.social-icons a:hover {
-    transform: translateY(-3px) translateZ(0);
-}
-
+/* Titles */
 .title {
     display: flex;
     justify-content: center;
@@ -131,29 +153,32 @@ section {
     font-size: 2.2em;
     font-weight: 800;
     margin-bottom: 30px;
+    text-align: center;
 }
 
+/* Content Grid */
 .content {
     display: flex;
     justify-content: center;
-    flex-direction: row;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
+/* Cards */
 .card {
     background-color: #fff;
-    width: 21.25em;
+    width: 100%;
+    max-width: 21.25em;
     box-shadow: 0 5px 25px rgba(1, 1, 1, 0.15);
     border-radius: 10px;
     padding: 25px;
-    margin: 15px;
-    transition: transform 0.3s ease;
-    transform: translateZ(0);
-    will-change: transform;
+    margin: 10px;
+    transition: 0.7s ease;
+    flex: 1 1 300px;
 }
 
 .card:hover {
-    transform: scale(1.1) translateZ(0);
+    transform: scale(1.05);
 }
 
 .icon {
@@ -170,9 +195,10 @@ section {
     color: #3a6cf4;
     font-size: 1.2em;
     font-weight: 700;
-    margin: 10px;
+    margin: 10px 0;
 }
 
+/* Projects Section */
 .projects {
     background-color: #000016;
 }
@@ -185,17 +211,17 @@ section {
     background-color: #fff;
     border: 1px solid #fff;
     min-height: 14em;
-    width: 23em;
+    width: 100%;
+    max-width: 23em;
     overflow: hidden;
     border-radius: 10px;
-    margin: 20px;
-    transition: transform 0.3s ease;
-    transform: translateZ(0);
-    will-change: transform;
+    margin: 10px;
+    transition: 0.7s ease;
+    flex: 1 1 300px;
 }
 
 .project-card:hover {
-    transform: scale(1.1) translateZ(0);
+    transform: scale(1.05);
 }
 
 .project-card:hover .project-image {
@@ -223,18 +249,19 @@ section {
     text-transform: uppercase;
     font-weight: 800;
     margin-top: 10px;
+    flex-wrap: wrap;
 }
 
 .more-details {
     text-decoration: none;
     color: #3a6cf4;
-    transition: color 0.3s ease;
 }
 
 .more-details:hover {
     color: #601cfc;
 }
 
+/* Contact Section */
 .contact .icon {
     font-size: 4.5em;
 }
@@ -247,18 +274,21 @@ section {
     font-size: 1.5em;
 }
 
+/* Footer */
 .footer {
     background-color: #000016;
     color: #fff;
-    padding: 2em;
+    padding: 2em 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .footer-title {
     font-size: 1.3em;
     font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .footer-title span {
@@ -267,64 +297,107 @@ section {
 
 .footer .social-icons a {
     font-size: 1.3em;
-    padding: 0 0.5em;
+    margin: 0 5px;
 }
 
-/* Media Queries للاستجابة */
-@media screen and (max-width: 1200px) {
-    .card, .project-card {
-        width: calc(50% - 40px);
+/* Media Queries for Responsiveness */
+
+/* Tablets and smaller desktops */
+@media screen and (max-width: 1024px) {
+    .main h2 span {
+        font-size: 2.5em;
+    }
+    
+    .main h3 {
+        font-size: 1.7em;
+    }
+    
+    .icon {
+        font-size: 6em;
     }
 }
 
+/* Tablets */
 @media screen and (max-width: 768px) {
     header {
-        padding: 10px 20px;
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .navigation {
-        margin-top: 15px;
-    }
-    
-    .navigation a {
-        padding: 0 15px;
-        font-size: 1em;
+        padding: 15px 20px;
     }
     
     section {
         padding: 80px 20px;
     }
     
+    .nav-toggle {
+        display: block;
+    }
+    
+    .navigation {
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: #f0f0f0;
+        height: 100vh;
+        width: 70%;
+        max-width: 300px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-top: 80px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .navigation.active {
+        transform: translateX(0);
+    }
+    
+    .navigation a {
+        display: block;
+        padding: 15px 30px;
+        margin: 0;
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .main h2 {
+        font-size: 1.2em;
+    }
+    
     .main h2 span {
-        font-size: 2.2em;
+        font-size: 2em;
     }
     
     .main h3 {
         font-size: 1.5em;
     }
     
-    .card, .project-card {
-        width: 100%;
-        margin: 10px 0;
-    }
-    
-    .content {
-        flex-direction: column;
-        align-items: center;
+    .title {
+        font-size: 1.8em;
     }
     
     .footer {
         flex-direction: column;
         text-align: center;
-        gap: 20px;
+    }
+    
+    .footer .social-icons {
+        margin-top: 15px;
     }
 }
 
+/* Mobile phones */
 @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 1.5em;
+    }
+    
+    section {
+        padding: 70px 15px;
+    }
+    
     .main h2 {
-        font-size: 1.2em;
+        font-size: 1.1em;
     }
     
     .main h2 span {
@@ -332,19 +405,55 @@ section {
     }
     
     .main h3 {
-        font-size: 1.2em;
+        font-size: 1.3em;
+    }
+    
+    .main-btn {
+        font-size: 1em;
+        padding: 0.8em 1.8em;
     }
     
     .title {
-        font-size: 1.8em;
+        font-size: 1.6em;
     }
     
     .icon {
-        font-size: 6em;
+        font-size: 5em;
     }
     
-    .navigation a {
-        padding: 0 10px;
-        font-size: 0.9em;
+    .card, .project-card {
+        flex: 1 1 100%;
+    }
+    
+    .project-title {
+        flex-direction: column;
+    }
+    
+    .project-title span {
+        margin-bottom: 5px;
+    }
+    
+    .contact .info p {
+        font-size: 1.2em;
+    }
+    
+    .footer-title {
+        font-size: 1.1em;
+    }
+}
+
+/* Small mobile phones */
+@media screen and (max-width: 320px) {
+    .main h2 span {
+        font-size: 1.5em;
+    }
+    
+    .main h3 {
+        font-size: 1.1em;
+    }
+    
+    .social-icons a {
+        font-size: 1.4em;
+        margin-right: 15px;
     }
 }
