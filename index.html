@@ -2,7 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    
+    <!-- Resource hints for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Critical CSS inlined -->
+    <style>
+        /* Critical above-the-fold styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; background: #fff; color: #333; }
+        .fonts-loaded body { font-family: 'Poppins', sans-serif; }
+        header { background: #f0f0f0; position: fixed; width: 100%; top: 0; z-index: 999; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; }
+        .logo { color: #3a6cf4; text-decoration: none; font-weight: 700; font-size: 1.8em; }
+        .main { min-height: 100vh; display: flex; align-items: center; padding: 100px 5% 50px; }
+        .main-content h2 { font-size: 1.4em; font-weight: 500; }
+        .main-content h2 span { color: #4e9eff; display: inline-block; margin-top: 10px; font-weight: 600; }
+        .main-content h3 { color: #fff; font-size: 2em; font-weight: 700; letter-spacing: 1px; margin-top: 10px; margin-bottom: 30px; }
+        .main-btn { color: #fff; background-color: #3a6cf4; text-decoration: none; font-size: 1.1em; font-weight: 600; display: inline-block; padding: 0.9375em 2.1875em; letter-spacing: 1px; border-radius: 15px; margin-bottom: 40px; transition: 0.7s ease; }
+        .main-btn:hover { background-color: #0a49f6; transform: scale(1.1); }
+        .social-icons a { color: #fff; font-size: 1.7em; padding-right: 30px; }
+        .navigation a { color: #3a6cf4; text-decoration: none; font-size: 1.1em; font-weight: 500; margin-left: 30px; }
+        .nav-toggle { display: none; }
+        @media (max-width: 1023px) { .nav-toggle { display: block; } .navigation { display: none; } }
+    </style>
+    
+    <!-- Font with preconnect -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"></noscript>
     
@@ -75,7 +106,10 @@
         <div class="content">
             <div class="project-card">
                 <div class="project-image">
-                    <img src="images/img1.png" alt="Project 1" loading="lazy" decoding="async">
+
+
+                    <img src="images/img1.png" alt="Project 1" decoding="async" width="400" height="300">
+
                 </div>
                 <div class="project-info">
                     <p class="project-category">fareszzzz</p>
@@ -87,7 +121,10 @@
             </div>
             <div class="project-card">
                 <div class="project-image">
-                    <img src="images/img2.jpg" alt="Project 2" loading="lazy" decoding="async">
+
+
+                    <img src="images/img2.jpg" alt="Project 2" decoding="async" width="400" height="300">
+
                 </div>
                 <div class="project-info">
                     <p class="project-category">fareszzzz</p>
@@ -99,7 +136,10 @@
             </div>
             <div class="project-card">
                 <div class="project-image">
-                    <img src="images/img3.jpg" alt="Project 3" loading="lazy" decoding="async">
+
+
+                    <img src="images/img3.jpg" alt="Project 3" loading="lazy" decoding="async" width="400" height="300">
+
                 </div>
                 <div class="project-info">
                     <p class="project-category">fareszzzz</p>
@@ -111,7 +151,10 @@
             </div>
             <div class="project-card">
                 <div class="project-image">
-                    <img src="images/work1.jpg" alt="Project 4" loading="lazy" decoding="async">
+
+
+                    <img src="images/img1.png" alt="Project 4" loading="lazy" decoding="async" width="400" height="300">
+
                 </div>
                 <div class="project-info">
                     <p class="project-category">fareszzzz</p>
@@ -123,7 +166,7 @@
             </div>
             <div class="project-card">
                 <div class="project-image">
-                    <img src="images/work1.jpg" alt="Project 5" loading="lazy" decoding="async">
+                    <img src="images/img2.jpg" alt="Project 5" loading="lazy" decoding="async" width="400" height="300">
                 </div>
                 <div class="project-info">
                     <p class="project-category">fareszzzz</p>
@@ -135,7 +178,7 @@
             </div>
             <div class="project-card">
                 <div class="project-image">
-                    <img src="images/work1.jpg" alt="Project 6" loading="lazy" decoding="async">
+                    <img src="images/img3.jpg" alt="Project 6" loading="lazy" decoding="async" width="400" height="300">
                 </div>
                 <div class="project-info">
                     <p class="project-category">fareszzzz</p>
@@ -181,6 +224,21 @@
         </div>
     </footer>
     
-    <script src="script.js" defer></script>
+    <script src="script-optimized.js" defer></script>
+    <script src="optimize-images-simple.js" defer></script>
+    <script>
+        // Register service worker for offline functionality
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
 </body>
 </html>

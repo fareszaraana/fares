@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Image Loading</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-section { margin: 20px 0; padding: 20px; border: 1px solid #ccc; }
+        .test-image { max-width: 200px; margin: 10px; }
+        .status { color: green; font-weight: bold; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Test Image Loading</h1>
+    
+    <div class="test-section">
+        <h2>Testing Image Files</h2>
+        <p>Testing if image files exist and load properly:</p>
+        
+        <img src="images/img1.png" alt="Test 1" class="test-image" onload="this.nextElementSibling.className='status'; this.nextElementSibling.textContent='✅ Loaded successfully'" onerror="this.nextElementSibling.className='error'; this.nextElementSibling.textContent='❌ Failed to load'">
+        <div>Loading...</div>
+        
+        <img src="images/img2.jpg" alt="Test 2" class="test-image" onload="this.nextElementSibling.className='status'; this.nextElementSibling.textContent='✅ Loaded successfully'" onerror="this.nextElementSibling.className='error'; this.nextElementSibling.textContent='❌ Failed to load'">
+        <div>Loading...</div>
+        
+        <img src="images/img3.jpg" alt="Test 3" class="test-image" onload="this.nextElementSibling.className='status'; this.nextElementSibling.textContent='✅ Loaded successfully'" onerror="this.nextElementSibling.className='error'; this.nextElementSibling.textContent='❌ Failed to load'">
+        <div>Loading...</div>
+        
+        <img src="images/background.png" alt="Background" class="test-image" onload="this.nextElementSibling.className='status'; this.nextElementSibling.textContent='✅ Loaded successfully'" onerror="this.nextElementSibling.className='error'; this.nextElementSibling.textContent='❌ Failed to load'">
+        <div>Loading...</div>
+    </div>
+    
+    <div class="test-section">
+        <h2>File Paths Check</h2>
+        <p>Current working directory: <span id="cwd"></span></p>
+        <p>Page URL: <span id="url"></span></p>
+    </div>
+    
+    <script>
+        document.getElementById('cwd').textContent = window.location.pathname;
+        document.getElementById('url').textContent = window.location.href;
+    </script>
+</body>
+</html>

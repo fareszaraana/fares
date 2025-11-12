@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✅ تم إصلاح مشكلة الصور</title>
+    <style>
+        body { 
+            font-family: 'Arial', sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 600px;
+        }
+        .success-icon {
+            font-size: 60px;
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+        h1 { color: #333; margin-bottom: 20px; }
+        .status { 
+            background: #d4edda; 
+            color: #155724; 
+            padding: 15px; 
+            border-radius: 8px; 
+            margin: 20px 0;
+            border: 1px solid #c3e6cb;
+        }
+        .test-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .test-item {
+            padding: 10px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            background: #f8f9fa;
+        }
+        .test-item img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .test-item.success {
+            border-color: #28a745;
+            background: #d4edda;
+        }
+        .test-item.error {
+            border-color: #dc3545;
+            background: #f8d7da;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 10px 5px;
+            transition: background 0.3s;
+        }
+        .btn:hover { background: #0056b3; }
+        .btn-success { background: #28a745; }
+        .btn-success:hover { background: #1e7e34; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-icon">🎉</div>
+        <h1>تم إصلاح مشكلة تحميل الصور!</h1>
+        
+        <div class="status">
+            <strong>✅ تم حل المشكلة:</strong> كانت الصور لا تظهر بسبب وجود ملفات غير موجودة (work1.jpg) تم استبدالها بالملفات الموجودة لديك.
+        </div>
+        
+        <h3>🔍 اختبار تحميل الصور:</h3>
+        <div class="test-images">
+            <div class="test-item" id="test1">
+                <img src="images/img1.png" alt="img1.png" 
+                     onload="this.parentElement.classList.add('success'); document.getElementById('status1').textContent='✅ تم التحميل'"
+                     onerror="this.parentElement.classList.add('error'); document.getElementById('status1').textContent='❌ فشل التحميل'">
+                <div id="status1">⏳ جاري التحميل...</div>
+            </div>
+            
+            <div class="test-item" id="test2">
+                <img src="images/img2.jpg" alt="img2.jpg" 
+                     onload="this.parentElement.classList.add('success'); document.getElementById('status2').textContent='✅ تم التحميل'"
+                     onerror="this.parentElement.classList.add('error'); document.getElementById('status2').textContent='❌ فشل التحميل'">
+                <div id="status2">⏳ جاري التحميل...</div>
+            </div>
+            
+            <div class="test-item" id="test3">
+                <img src="images/img3.jpg" alt="img3.jpg" 
+                     onload="this.parentElement.classList.add('success'); document.getElementById('status3').textContent='✅ تم التحميل'"
+                     onerror="this.parentElement.classList.add('error'); document.getElementById('status3').textContent='❌ فشل التحميل'">
+                <div id="status3">⏳ جاري التحميل...</div>
+            </div>
+        </div>
+        
+        <div style="margin-top: 30px;">
+            <a href="index.html" class="btn btn-success">🚀 عرض الموقع الرئيسي</a>
+            <a href="test-all-images.html" class="btn">🔧 صفحة الاختبار الكاملة</a>
+        </div>
+        
+        <div style="margin-top: 20px; padding: 15px; background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 6px;">
+            <strong>💡 ملاحظة:</strong> تم تبسيط تحميل الصور وإزالة WebP المعقد لضمان عمل الصور بشكل مباشر.
+        </div>
+    </div>
+</body>
+</html>
