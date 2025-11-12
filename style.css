@@ -1,16 +1,10 @@
-/* Using <link rel="preload"> in HTML is better for performance than @import */
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* scroll-behavior: smooth; has been moved to html tag for better performance */
-}
-
-/* Added for performance optimization and correct scope for scroll-behavior */
-html {
     scroll-behavior: smooth;
 }
 
@@ -93,10 +87,7 @@ section {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: url(images/background.png) no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+  background: linear-gradient(135deg, #000016 0%, #101d40 50%, #311764 100%);
 }
 
 .main-content {
@@ -278,6 +269,249 @@ section {
 
 .contact .info p {
     font-size: 1.5em;
+}
+
+/* Projects Gallery Styles */
+.projects-gallery {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #0a49f6 0%, #3a6cf4 50%, #4e9eff 100%);
+    min-height: 100vh;
+}
+
+.projects-gallery .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.gallery-title {
+    text-align: center;
+    color: #fff;
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Main Showcase */
+.main-showcase {
+    margin-bottom: 80px;
+}
+
+.showcase-item {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.showcase-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.showcase-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-bottom: 3px solid #3a6cf4;
+}
+
+.showcase-info {
+    padding: 30px;
+    text-align: center;
+}
+
+.showcase-info h3 {
+    font-size: 1.8em;
+    color: #3a6cf4;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.showcase-info p {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.project-date {
+    display: inline-block;
+    background: #3a6cf4;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.gallery-item {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 2px solid #3a6cf4;
+}
+
+.gallery-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.gallery-info h4 {
+    font-size: 1.3em;
+    color: #3a6cf4;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.gallery-info p {
+    font-size: 0.95em;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Video Section */
+.video-section {
+    margin-top: 80px;
+}
+
+.section-title {
+    text-align: center;
+    color: #fff;
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.video-item {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+.video-placeholder {
+    height: 200px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.video-placeholder i {
+    font-size: 3em;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.video-placeholder p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.video-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.video-info h4 {
+    font-size: 1.2em;
+    color: #3a6cf4;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.video-info p {
+    font-size: 0.9em;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery-title {
+        font-size: 2em;
+    }
+    
+    .showcase-image {
+        height: 300px;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .video-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .showcase-info h3 {
+        font-size: 1.5em;
+    }
+    
+    .section-title {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-gallery {
+        padding: 60px 0;
+    }
+    
+    .showcase-info {
+        padding: 20px;
+    }
+    
+    .gallery-info {
+        padding: 15px;
+    }
+    
+    .video-info {
+        padding: 15px;
+    }
 }
 
 /* Footer */
@@ -462,4 +696,8 @@ section {
         font-size: 1.4em;
         margin-right: 15px;
     }
+   .main-img img{
+    font-size: smaller;
+    background-color: #000;
+   }
 }
